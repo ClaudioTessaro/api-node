@@ -1,0 +1,19 @@
+docker
+criando uma imagem do postgres
+docker run --name database -e POSTGRES_PASSWORD=docker -p:5433:5432 -d postgres:11
+iniciando o docker
+docker start database
+listando todas as imagens existentes
+docker ps -a
+listando as imagens que estão ativas no container
+docker ps
+
+Migration
+comando para criar a Migration
+yarn sequelize migration:create --name=create-users
+
+comando para subir a migration criada
+yarn sequelize db:migrate
+
+para dar o roll back é
+yarn sequelize db:migrate:undo
