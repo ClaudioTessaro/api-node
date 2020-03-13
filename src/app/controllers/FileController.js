@@ -1,6 +1,13 @@
+import File from "../models/File";
+
 class FileControlle {
     async store(req, res) {
-        return res.json({ ok: true });
+        const { originalName: name, fileName: path } = req.file;
+        const file = await File.create({
+            name,
+            path,
+        });
+        return res.json(file);
     }
 }
 export default new FileControlle();
