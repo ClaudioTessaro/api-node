@@ -19,9 +19,6 @@ routes.post("/sessions", SessionController.store);
 routes.use(authMiddleware);
 routes.put("/users", UserController.update);
 
-routes.post("/file", upload.single("file"), (req, res) => {
-    return res.json(req.file);
-});
 routes.post("/files", upload.single("file"), FileController.store);
 routes.get("/providers", ProviderController.index);
 routes.post("/appointments", AppointmentController.store);
